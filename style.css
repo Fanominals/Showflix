@@ -47,9 +47,8 @@ h3 {
 }
 
 #landing {
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
-    height: 100%;
   }
 
 /*
@@ -209,20 +208,23 @@ HEADER
   box-shadow: 1px 4px 12px 1px rgba(255, 255, 255, 0.5);
 }
 
-.fa-magnifying-glass {
+.search__bar--submit {
   position: absolute;
+  border: none;
   right: 6px;
   top: 50%;
   transform: translateY(-50%);
-  padding: 17px 30px;
+  padding: 12px 40px;
   border-radius: 30px;
   cursor: pointer;
   font-size: 20px;
   background-color: red;
-  transition: all 300ms ease;
+  transition: all 500ms ease;
+  
 }
 
-.fa-magnifying-glass:hover {
+
+.search__bar--submit:hover  {
   color: white;
 }
 
@@ -249,7 +251,7 @@ SEARCH
 /*
 
 SEARCH RESULTS
-
+Initial Load
 
 */
 
@@ -269,7 +271,14 @@ SEARCH RESULTS
   height: 350px;
 }
 
+/*
+
+SEARCH RESULTS
+
+*/
+
 .search__results {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   color: white;
@@ -334,6 +343,7 @@ height: 100%;
   transition: all 500ms ease;
   font-weight: 300;
   opacity: 0;
+  height: 80%;
 }
 
 .search__result--description {
@@ -341,7 +351,7 @@ height: 100%;
   }
 
 .search__result--description--low {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
 display: none;
 }
@@ -352,6 +362,43 @@ display: none;
   margin-bottom:12px;
 }
 
+/* 
+
+SEARCH RESULTS SKELETON LOADING STATE
+
+*/
+
+.loading__overlay {
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%;
+display: flex;
+background-color: black;
+justify-content: center;
+align-items: center;
+visibility: hidden;
+opacity: 0;
+}
+
+.fa-spinner {
+  font-size: 48px;
+  animation: rotate infinite 600ms linear;
+}
+
+.loading__overlay--visible .loading__overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
 
 
 
@@ -371,12 +418,9 @@ display: none;
     max-width: 600px;
     width: 100%;
   }
-  .search__result--img--wrapper {
-    height: 375px
-  }
 
-  .search__result--background--info {
-    font-size: 16px;
+  .search__result {
+    width: 50%
   }
 
   .search__result--name {
@@ -396,8 +440,8 @@ display: none;
     display: none;
   }
 
-  .search__result--img--wrapper {
-    height: 275px
+  .search__result--background--info {
+    height: 20%;
   }
   .search__result--description {
     display: none;
@@ -406,7 +450,15 @@ display: none;
     display: inline;
   }
 
+  @media (max-width: 650px) {
+    .search__result {
+      width: 90%;
+      margin-bottom: 16px
+    }
+    .search__result--title {
+      margin-top: 8px;
+    }
 
 
-
+  }
 }

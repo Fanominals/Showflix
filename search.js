@@ -12,19 +12,18 @@ function getSearch(event) {
 
 async function renderResults() {
   let query = localStorage.getItem("query");
-  console.log(query);
   if (localStorage.getItem("query")) {
     window.localStorage.removeItem("query");
     
     document.querySelector(
       ".displaysearchresults"
     ).innerHTML = `Search Results for: "${query}"`;
-  
+
+    searchResults.classList += ' loading__overlay--visible'
     const results = await fetch(
       `http://www.omdbapi.com/?s=${query.replace(" ", "+")}&apikey=${apiKey}`
     );
     const resultsData = (await results.json()).Search;
-    console.log(resultsData);
     let promiseArr = [];
     if (resultsData) {
       resultsData.forEach((result) => {
@@ -37,7 +36,7 @@ async function renderResults() {
   
       await Promise.all(promiseArr).then((promise) => (data = promise));
   
-  
+      searchResults.classList.remove('loading__overlay--visible');
       searchResults.innerHTML = data
         .map((result) => resultsHTML(result))
         .join("");
