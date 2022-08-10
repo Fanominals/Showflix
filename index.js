@@ -10,7 +10,7 @@ function getSearch(event) {
     console.log(window.location);
     event.preventDefault();
     localStorage.setItem("query", event.target[0].value)
-    window.location.href = `/search.html` 
+    window.location.href = `./` 
 }
 
 
