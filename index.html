@@ -21,17 +21,31 @@
                     <a class="nav__link link__hover-effect" href="./search.html">SEARCH</a>
                     <a class="nav__link link__hover-effect" href="#">CONTACT</a>
                 </div>
+                <button  class="btn__menu menu__button--open">
+                    <i onclick="menuOpen()" class="fa-solid fa-bars"></i>
+                </button>
+                <div class="menu__backdrop">
+                    <button onclick="menuClose()" class="btn__menu menu__button--close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <div class="menu__links">
+                        <a onclick="menuClose()" class="nav__link link__hover-effect" href="./index.html">HOME</a>
+                        <a onclick="menuClose()" class="nav__link link__hover-effect" href="./search.html">SEARCH</a>
+                        <a onclick="menuClose()" class="nav__link link__hover-effect" href="#">CONTACT</a>
+                    </div>
+                </div>
             </div>
         </nav>
         <header>
             <div class="container">
                 <div class="row">
                     <div class="header__content">
-                        <h1 class="title header__title">SEARCH FOR YOUR FAVORITE <span class="red">MOVIES</span> AND <span class="red">TV SHOWS</span></h1>
-                        <div class="header__input">
+                        <h1 class="title header__title">SEARCH FOR YOUR FAVORITE <span class="red">MOVIES</span> AND <span class="red">TV SHOWS.</span></h1>
+                        <form class="header__input">
                             <input type="text" class="search__bar" onkeypress="getSearch(event)" placeholder="Search"></input>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            
+                        </form>
                     </div>
 
                 </div>

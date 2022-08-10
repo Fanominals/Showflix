@@ -26,6 +26,19 @@
             >
             <a class="nav__link link__hover-effect" href="#">CONTACT</a>
           </div>
+          <button  class="btn__menu menu__button--open">
+            <i onclick="menuOpen()" class="fa-solid fa-bars"></i>
+        </button>
+        <div class="menu__backdrop">
+            <button onclick="menuClose()" class="btn__menu menu__button--close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="menu__links">
+                <a onclick="menuClose()" class="nav__link link__hover-effect" href="./index.html">HOME</a>
+                <a onclick="menuClose()" class="nav__link link__hover-effect" href="./search.html">SEARCH</a>
+                <a onclick="menuClose()" class="nav__link link__hover-effect" href="#">CONTACT</a>
+            </div>
+        </div>
         </div>
       </nav>
       <section class="search__header">
@@ -33,35 +46,12 @@
           <div class="row">
             <input type="text" class="search__bar" onkeypress="getSearch(event)" placeholder="Search"></input>
             <div class="search__title">
-              <h2 class="subtitle displaysearchresults">Search Results for: "Breaking Bad"</h2>
+              <h2 class="displaysearchresults"></h2>
             </div>
-            <div class="search__results">
-              <div class="search__result">
-                <figure class="search__result--img--wrapper">
-                  <img
-                    src="./assets/not-found.png"
-                    alt=""
-                    class="search__result--img"
-                  />
-                  <div class="search__result--background"></div>
-                  <div class="search__result--background--info">
-                    <p class="search__result--year">Year: 2017</p>
-                    <p class="search__result--description">
-                      "A high school chemistry teacher diagnosed with inoperable
-                      lung cancer turns to manufacturing and selling
-                      methamphetamine in order to secure his family's future."
-                    </p>
-                    <p class="search__result--genre">
-                      Genre: Crime, Drama, Thriller
-                    </p>
-                  </div>
-                </figure>
-                <div class="search__result--title">
-                  <h3 class="search__result--name">Breaking Bad</h3>
-                  <h4 class="search__result--type">(Series)</h4>
-                </div>
-                <div class="search__result--ratings">
-                </div>
+            <div class="search__results ">
+              <div class="no__search__query">
+                <h2>Enter a search query</h2>
+                <figure class="no__search__query--wrapper"><img src="./assets/empty-search.svg" alt=""></figure>
               </div>
             </div>
           </div>
