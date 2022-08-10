@@ -263,13 +263,16 @@ Initial Load
   justify-content: center;
   align-items: center;
   margin-top: 24px;
-  padding: 48px;
+  padding: 42px;
+  text-align: center;
 }
 
 .no__search__query--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
   width: 350px;
-  height: 350px;
 }
 
 /*
@@ -474,6 +477,16 @@ opacity: 0;
       margin-top: 8px;
     }
 
+
+    .no__search__query {
+      padding: 16px
+    }
+    .no__search__query--title {
+      font-size: 28px;
+    }
+    .no__search__query--wrapper {
+      width: 250px;
+    }
 
   }
 }
