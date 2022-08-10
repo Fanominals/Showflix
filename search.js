@@ -21,7 +21,7 @@ async function renderResults() {
 
     searchResults.classList += ' loading__overlay--visible'
     const results = await fetch(
-      `http://www.omdbapi.com/?s=${query.replace(" ", "+")}&apikey=${apiKey}`
+      `https://www.omdbapi.com/?s=${query.replace(" ", "+")}&apikey=${apiKey}`
     );
     const resultsData = (await results.json()).Search;
     let promiseArr = [];
@@ -29,7 +29,7 @@ async function renderResults() {
       resultsData.forEach((result) => {
         promiseArr.push(
           fetch(
-            `http://www.omdbapi.com/?i=${result.imdbID}&apikey=${apiKey}`
+            `https://www.omdbapi.com/?i=${result.imdbID}&apikey=${apiKey}`
           ).then((res) => res.json())
         );
       });
