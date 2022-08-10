@@ -7,9 +7,10 @@ function menuClose() {
 }
 
 function getSearch(event) {
+    console.log(window.location);
     event.preventDefault();
     localStorage.setItem("query", event.target[0].value)
-    window.location.href = `${window.origin}/search.html` 
+    window.location.href = `/search.html` 
 }
 
 
