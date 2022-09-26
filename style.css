@@ -90,7 +90,16 @@ nav {
 }
 
 .logo__wrapper {
-  width: 200px;
+  width: 300px;
+  overflow: hidden;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+width: 350px;
+transform: translateX(-20px);
 }
 
 .nav__links {
